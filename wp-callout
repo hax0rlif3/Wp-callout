@@ -1,0 +1,14 @@
+function my_tweak_callout_display( $return ) {
+
+	// Hide on archives
+	if ( is_archive() ) {
+		return false;
+	}
+
+	// Otherwise return default theme display
+	else {
+		return $return;
+	}
+	
+}
+add_filter( 'wpex_callout_enabled', 'my_tweak_callout_display' );
